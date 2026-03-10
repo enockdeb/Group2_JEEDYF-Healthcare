@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact JEEDYF Healthcare for appointments, inquiries, and support. We're here to help you stay healthy." />
+    <title>Contact Us - JEEDYF Healthcare</title>
+    <!-- favicon placeholder -->
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="header site-header">
+        <div class="container">
+            <div class="topbar">
+                <div class="brand">
+                    <h1 class="site-title">Contact Us</h1>
+                    <p class="subtitle">Appointments, questions, and support—handled professionally and promptly.</p>
+                </div>
+
+                <div class="header-actions">
+                    <a class="btn btn-cta" href="tel:+233596054623">Call</a>
+                    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Toggle dark mode">Theme</button>
+                </div>
+            </div>
+
+            <nav class="navbar" aria-label="Primary">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" id="main">
+        <section class="section">
+            <h2>Get in Touch</h2>
+            <p>For appointments, referrals, or service inquiries, contact our team by phone at
+                <a href="tel:+233596054623">+233 596 054 623</a> or email
+                <a href="mailto:info@jeedyfhealthcare.com">info@jeedyfhealthcare.com</a>.</p>
+            <p>If you leave a message, we’ll get back to you as soon as we can during business hours.</p>
+        </section>
+
+        <section class="contact-form section">
+            <h2>Send Us a Message</h2>
+            <form action="#" method="post" novalidate>
+
+                <label>
+                    Name
+                    <input type="text" name="name" required placeholder="Your full name">
+                </label>
+                <label>
+                    Email
+                    <input type="email" name="email" required placeholder="you@example.com">
+                </label>
+                <label>
+                    Message
+                    <textarea name="message" rows="5" required placeholder="How can we help?"></textarea>
+                </label>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section class="cta-strip" aria-label="Call to action">
+            <div>
+                <h2>Need immediate assistance?</h2>
+                <p>Call our team to discuss your needs and the next available appointment slot.</p>
+            </div>
+            <div class="button-group">
+                <a class="btn btn-primary" href="tel:+233596054623">Call now</a>
+                <a class="btn btn-secondary" href="Services.html">View services</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <h3>JEEDYF Healthcare</h3>
+                <p>Professional care with clear communication and dependable service.</p>
+                <div class="social-links" aria-label="Social links">
+                    <a href="#" aria-label="Facebook">Facebook</a>
+                    <a href="#" aria-label="X">X</a>
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                </div>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:+233596054623">+233 596 054 623</a></li>
+                    <li><a href="mailto:info@jeedyfhealthcare.com">info@jeedyfhealthcare.com</a></li>
+                    <li>Mon–Fri: 8:00am–6:00pm</li>
+                    <li>Sat: 9:00am–2:00pm</li>
+                </ul>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 JEEDYF Healthcare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var toggle = document.getElementById('themeToggle');
+            if (!toggle) return;
+
+            function applyTheme(theme) {
+                if (theme === 'dark') {
+                    document.body.setAttribute('data-theme', 'dark');
+                } else {
+                    document.body.removeAttribute('data-theme');
+                }
+            }
+
+            function updateToggleLabel() {
+                var isDark = document.body.getAttribute('data-theme') === 'dark';
+                toggle.textContent = isDark ? 'Light' : 'Dark';
+            }
+
+            var saved = localStorage.getItem('theme');
+            applyTheme(saved);
+            updateToggleLabel();
+
+            toggle.addEventListener('click', function () {
+                var isDark = document.body.getAttribute('data-theme') === 'dark';
+                var next = isDark ? 'light' : 'dark';
+                localStorage.setItem('theme', next);
+                applyTheme(next);
+                updateToggleLabel();
+            });
+        })();
+    </script>
+</body>
+</html>

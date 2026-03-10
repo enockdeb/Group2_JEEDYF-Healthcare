@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Placeholder Images</title>
+</head>
+<body>
+    <canvas id="canvas1" width="400" height="250"></canvas>
+    <canvas id="canvas2" width="300" height="300"></canvas>
+    
+    <script>
+        // Create service images (400x250)
+        const services = ['primary-care', 'wellness', 'followup', 'support'];
+        const colors = ['#1d4ed8', '#0ea5e9', '#0f766e', '#64748b'];
+        
+        services.forEach((service, index) => {
+            const canvas = document.createElement('canvas');
+            canvas.width = 400;
+            canvas.height = 250;
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = colors[index];
+            ctx.fillRect(0, 0, 400, 250);
+            
+            // Text
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(service.replace('-', ' ').toUpperCase(), 200, 125);
+            ctx.font = '16px Arial';
+            ctx.fillText('Healthcare Service', 200, 155);
+            
+            // Download
+            const link = document.createElement('a');
+            link.download = service + '.jpg';
+            link.href = canvas.toDataURL('image/jpeg', 0.8);
+            link.click();
+        });
+        
+        // Create team images (300x300)
+        const team = ['doctor1', 'facility1', 'staff1'];
+        const teamColors = ['#1d4ed8', '#0ea5e9', '#0f766e'];
+        const labels = ['Medical Director', 'Modern Facility', 'Caring Staff'];
+        
+        team.forEach((member, index) => {
+            const canvas = document.createElement('canvas');
+            canvas.width = 300;
+            canvas.height = 300;
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = teamColors[index];
+            ctx.fillRect(0, 0, 300, 300);
+            
+            // Text
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 20px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(labels[index], 150, 140);
+            ctx.font = '14px Arial';
+            ctx.fillText('JEEDYF Healthcare', 150, 165);
+            
+            // Download
+            const link = document.createElement('a');
+            link.download = member + '.jpg';
+            link.href = canvas.toDataURL('image/jpeg', 0.8);
+            link.click();
+        });
+        
+        // Fix specialty.jpg
+        const canvas = document.createElement('canvas');
+        canvas.width = 400;
+        canvas.height = 250;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#1d4ed8';
+        ctx.fillRect(0, 0, 400, 250);
+        ctx.fillStyle = 'white';
+        ctx.font = 'bold 24px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText('SPECIALTY SUPPORT', 200, 125);
+        ctx.font = '16px Arial';
+        ctx.fillText('Advanced Medical Care', 200, 155);
+        
+        const link = document.createElement('a');
+        link.download = 'specialty.jpg';
+        link.href = canvas.toDataURL('image/jpeg', 0.8);
+        link.click();
+    </script>
+</body>
+</html>

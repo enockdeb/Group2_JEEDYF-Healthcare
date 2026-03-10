@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About JEEDYF Healthcare</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="header site-header">
+        <div class="container">
+            <div class="topbar">
+                <div class="brand">
+                    <h1 class="site-title">About Us</h1>
+                    <p class="subtitle">A patient-first provider built on quality, clarity, and accountability.</p>
+                </div>
+
+                <div class="header-actions">
+                    <a class="btn btn-cta" href="tel:+233596054623">Call</a>
+                    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Toggle dark mode">Theme</button>
+                </div>
+            </div>
+
+            <nav class="navbar" aria-label="Primary">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html" class="active">About Us</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" id="main">
+        <section class="section">
+            <p>JEEDYF Healthcare provides medical care for individuals and families, with a focus on safety, professionalism, and clear communication.</p>
+
+            <p>We take time to listen, explain options in plain language, and guide patients through the next steps—before, during, and after a visit.</p>
+        </section>
+
+        <section class="section">
+            <article>
+                <h2>Our Mission</h2>
+                <p>To improve community health through safe, high-quality care and a respectful patient experience.</p>
+            </article>
+            <article>
+                <h2>Our Vision</h2>
+                <p>To be a trusted provider known for dependable care, strong standards, and consistent service.</p>
+            </article>
+        </section>
+
+        <section class="section">
+            <h2>Our Team & Facility</h2>
+            <div class="team-grid">
+                <article class="team-member">
+                    <video class="team-video" width="300" height="300" controls poster="images/doctor.jpg">
+                        <source src="videos/video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3>Medical Director</h3>
+                    <p>Leading our clinical team with over 15 years of experience in patient care and medical management.</p>
+                </article>
+                <article class="team-member">
+                    <img src="images/facility1.jpg" alt="Medical facility" class="facility-photo" width="300" height="300" />
+                    <h3>Modern Facility</h3>
+                    <p>State-of-the-art medical equipment and comfortable patient environment designed for optimal care.</p>
+                </article>
+                <article class="team-member">
+                    <img src="images/staff1.jpg" alt="Nursing staff" class="team-photo" width="300" height="300" />
+                    <h3>Caring Staff</h3>
+                    <p>Dedicated healthcare professionals committed to providing compassionate, personalized patient care.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <h3>JEEDYF Healthcare</h3>
+                <p>Professional care with clear communication and dependable service.</p>
+                <div class="social-links" aria-label="Social links">
+                    <a href="#" aria-label="Facebook">Facebook</a>
+                    <a href="#" aria-label="X">X</a>
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                </div>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:+233596054623">+233 596 054 623</a></li>
+                    <li><a href="mailto:info@jeedyfhealthcare.com">info@jeedyfhealthcare.com</a></li>
+                    <li>Mon–Fri: 8:00am–6:00pm</li>
+                    <li>Sat: 9:00am–2:00pm</li>
+                </ul>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 JEEDYF Healthcare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var toggle = document.getElementById('themeToggle');
+            if (!toggle) return;
+
+            function applyTheme(theme) {
+                if (theme === 'dark') {
+                    document.body.setAttribute('data-theme', 'dark');
+                } else {
+                    document.body.removeAttribute('data-theme');
+                }
+            }
+
+            function updateToggleLabel() {
+                var isDark = document.body.getAttribute('data-theme') === 'dark';
+                toggle.textContent = isDark ? 'Light' : 'Dark';
+            }
+
+            var saved = localStorage.getItem('theme');
+            applyTheme(saved);
+            updateToggleLabel();
+
+            toggle.addEventListener('click', function () {
+                var isDark = document.body.getAttribute('data-theme') === 'dark';
+                var next = isDark ? 'light' : 'dark';
+                localStorage.setItem('theme', next);
+                applyTheme(next);
+                updateToggleLabel();
+            });
+        })();
+    </script>
+</body>
+</html>
